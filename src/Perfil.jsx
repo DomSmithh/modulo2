@@ -4,7 +4,7 @@ import './Perfil.css';
 
 
 
-function Perfil({nome, foto, idade}){
+function Perfil({nome, valor, user, projeto}){
     const [numeroVisualizacoes, setNumeroVisualizacoes] = useState(0);
 
     function aumentarVisualizacoes(){

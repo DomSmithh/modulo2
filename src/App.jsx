@@ -2,43 +2,46 @@ import Title from './Title';
 import Button from './Button';
 import SayName from './SayName';
 import Perfil from './Perfil';
+import "./App.css"
+import Produto from './Produto';
 
 function App(){
-  const lista_pessoas = [
+  const produtos = [
     {
-      nome: "DORORO",
-      idade: "20"
+      nome: "Start",
+      valor: "Free",
+      user: "1 User",
+      projeto: "1 Project",
     },
     {
-      nome: "Hyakkimaru",
-      idade: "30"
+      nome: "Basic",
+      valor: "$ 19.99",
+      user: "5 User",
+      projeto: "20 Project",
     },
     {
-      nome: "Mano",  
-      idade:"25"
+      nome: "Expert",
+      valor: "$129.99",
+      user: "Unlimited Users",
+      projeto: "Unlimited Projects",
     },
-    {
-      nome: "DORORO",
-      idade: "20"
-    },{
-      nome: "DORORO",
-      idade: "20"
-    },
+   
   ];
 
     return(
       <div>
-        <Title />
-        
-        
-
-        { lista_pessoas.map( (pessoa) => {
-          return <Perfil foto={pessoa.foto} nome={pessoa.nome} idade={pessoa.idade} />
-        } ) }
-
-      </div>
-        
-    );
+        {
+          produtos.map((produtos, i) => {
+            return <Produto key={i}
+                    nome={produtos.nome}
+                    valor={produtos.valor}
+                    user={produtos.user}
+                    projeto={produtos.projeto}
+                />;
+            })
+          }
+        </div>
+      );
 }
 
-export default App
+export default App;
